@@ -5,6 +5,7 @@ const getRandomHexColor = () => {
 }
 
 const query = (selector) => document.querySelector(selector);
+
 const input = document.querySelector('input[type="number"]');
 const createBtn = query('[data-create]');
 const destroyBtn = query('[data-destroy]');
