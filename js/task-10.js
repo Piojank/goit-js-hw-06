@@ -11,20 +11,26 @@ const createBtn = query('[data-create]');
 const destroyBtn = query('[data-destroy]');
 const divBoxes = query('#boxes');
 
+let size = 30;
+
+const createBox = () => {
+  const div = document.createElement('div');
+  div.style.width = `${size}px`;
+  div.style.height = `${size}px`;
+  div.style.backgroundColor = getRandomHexColor();
+  divBoxes.appendChild(div);
+  size += 10;
+};
+
 const createBoxes = (amount) => {
-  let size = 30;
   for (let i = 0; i < amount; i += 1) {
-    const div = document.createElement('div');
-    div.style.width = `${size}px`;
-    div.style.height = `${size}px`;
-    div.style.backgroundColor = getRandomHexColor();
-    divBoxes.appendChild(div);
-    size += 10;
+    createBox();
   }
 };
 
 const destroyBoxes = () => {
   divBoxes.innerHTML = '';
+  size = 30;
 };
 
 createBtn.addEventListener('click', () => {
