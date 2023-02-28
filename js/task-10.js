@@ -13,18 +13,14 @@ const divBoxes = query('#boxes');
 
 let size = 30;
 
-const createBox = () => {
-  const div = document.createElement('div');
-  div.style.width = `${size}px`;
-  div.style.height = `${size}px`;
-  div.style.backgroundColor = getRandomHexColor();
-  divBoxes.appendChild(div);
-  size += 10;
-};
-
 const createBoxes = (amount) => {
   for (let i = 0; i < amount; i += 1) {
-    createBox();
+    const div = document.createElement('div');
+    div.style.width = `${size}px`;
+    div.style.height = `${size}px`;
+    div.style.backgroundColor = getRandomHexColor();
+    divBoxes.appendChild(div);
+    size += 10;
   }
 };
 
