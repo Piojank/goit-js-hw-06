@@ -5,7 +5,7 @@ const form = query(".login-form");
 const handleLogin = (event) => {
     event.preventDefault();
     const { 
-        elements: { email, password }
+        elements: { email = "", password = "" }
     } = event.currentTarget;
 
     if (email.value === "" || password.value === "") {
